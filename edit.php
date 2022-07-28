@@ -52,11 +52,9 @@ $result = $conn->query($sql);
     <div class="container">
   <main>
   
-    <div class="row g-5">
-      <div class="col-md-5 col-lg-4 order-md-last"> 
-      </div>
-      <div class="col-md-7 col-lg-8">
-        <h2 class="mb-3">Editar Anime</h2>
+    <div class="row g-8 justify-content-xl-center">
+      <div class="col-lg-8">
+        <h4 class="mb-12">Editar Anime</h4>
         <?php 
          while($row = $result->fetch_assoc()) {
         ?>

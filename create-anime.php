@@ -81,8 +81,6 @@ $result = $conn->query($sql);
         -webkit-overflow-scrolling: touch;
       }
     </style>
-
-    
   </head>
   <body>
     

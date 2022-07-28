@@ -42,14 +42,12 @@
   </div>
 </header>
 
-    <div class="container">
-  <main>
+<div class="container">
+  <main >
   
-    <div class="row g-5">
-      <div class="col-md-5 col-lg-4 order-md-last"> 
-      </div>
-      <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Crear Anime</h4>
+    <div class="row g-8 justify-content-xl-center">
+      <div class="col-lg-8">
+        <h4 class="mb-12">Crear Anime</h4>
         <form action="create-anime.php" method="post" class="needs-validation" novalidate>
           <div class="row g-3">
 
@@ -87,13 +85,9 @@
               <label for="imagen" class="form-label">Imagen URL</label>
               <input type="text" class="form-control" name="imagen" placeholder="" value="" required>
             </div>
-          
-          
         </div>
-
-          <hr class="my-4">
-
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Crear Anime</button>
+        <hr class="my-4">
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Crear Anime</button>
         </form>
       </div>
     </div>
