@@ -122,7 +122,7 @@ $result = $conn->query($sql);
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <?php
-      if ($conn->query($sql) === TRUE) {
+      if ($result === TRUE) {
         echo "Nuevo anime creado correctamente.";
       } else {
       echo "Error: " . $sql . "<br>" . $conn->error;

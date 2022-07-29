@@ -54,7 +54,7 @@ $result = $conn->query($sql);
   
     <div class="row g-8 justify-content-xl-center">
       <div class="col-lg-8">
-        <h4 class="mb-12">Editar Anime</h4>
+        <h4 class="mt-12 ">Editar Anime</h4>
         <?php 
          while($row = $result->fetch_assoc()) {
         ?>
