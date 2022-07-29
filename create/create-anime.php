@@ -8,10 +8,10 @@ $guion= $_POST['guion'];
 $productora= $_POST['productora'];
 $sinopsis= $_POST['sinopsis']; 
 $imagen= $_POST['imagen'];
-$id= $_POST['id'];
 
 //Consulta SQL
-$sql = "UPDATE anime SET titulo = '$titulo', direccion ='$direccion', guion = '$guion', productora = '$productora', sinopsis = '$sinopsis', imagen = '$imagen' WHERE id = $id";
+$sql = "INSERT INTO anime ( titulo, direccion, guion, productora, sinopsis, imagen) VALUES 
+('$titulo','$direccion','$guion','$productora','$sinopsis','$imagen')";
 $result = $conn->query($sql);
 ?>
 
@@ -20,16 +20,14 @@ $result = $conn->query($sql);
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
-    <title>Album example · Bootstrap v5.2</title>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/detail.css">
+    <title>animeworld</title>
 
-  <style>
+    <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -80,9 +78,8 @@ $result = $conn->query($sql);
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
-    </style> 
+    </style>
   </head>
-
   <body>
     
 <header>
@@ -123,8 +120,8 @@ $result = $conn->query($sql);
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <?php
-      if ($conn->query($sql) === TRUE) {
-        echo "Anime EDITADO correctamente.";
+      if ($result === TRUE) {
+        echo "Nuevo anime creado correctamente.";
       } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
       }
@@ -146,7 +143,7 @@ $result = $conn->query($sql);
 </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
       
   </body>

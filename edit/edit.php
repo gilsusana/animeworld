@@ -1,3 +1,10 @@
+<?php
+include './services/conection.php';
+$id = $_GET['id'];
+$sql = 'SELECT * FROM anime WHERE id=' .$id;
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/detail.css">
-    <title>Document</title>
+    <title>animeworld</title>
 </head>
 <body>
 
@@ -42,53 +49,68 @@
   </div>
 </header>
 
-<div class="container">
-  <main >
+    <div class="container">
+  <main>
   
     <div class="row g-8 justify-content-xl-center">
       <div class="col-lg-8">
-        <h4 class="mb-12">Crear Anime</h4>
-        <form action="create-anime.php" method="post" class="needs-validation" novalidate>
+        <h4 class="mt-12 ">Editar Anime</h4>
+        <?php 
+         while($row = $result->fetch_assoc()) {
+        ?>
+        <form action="edit-anime.php" method="post" class="needs-validation" novalidate>
           <div class="row g-3">
+          <input type="text" class="form-control" name="id" placeholder="" value='<?php echo $row['id']?>' readonly>
 
             <div class="col-sm-12">
               <label for="titulo" class="form-label">Título</label>
-              <input type="text" class="form-control" name="titulo" placeholder="" value="" required>
+              <input type="text" class="form-control" name="titulo" placeholder="" value='<?php echo $row['titulo']?>' required>
             </div>
 
             <div class="col-sm-12">
               <label for="año" class="form-label">Año</label>
-              <input type="text" class="form-control" name="año" placeholder="" value="" required>
+              <input type="text" class="form-control" name="año" placeholder="" value='<?php echo $row['año']?>' required>
             </div>
 
             <div class="col-sm-12">
               <label for="direccion" class="form-label">Dirección</label>
-              <input type="text" class="form-control" name="direccion" placeholder="" value="" required>  
+              <input type="text" class="form-control" name="direccion" placeholder="" value='<?php echo $row['direccion']?>' required>  
             </div>
 
             <div class="col-sm-12">
               <label for="guion" class="form-label">Guión</label>
-              <input type="text" class="form-control" name="guion" placeholder="" value="" required>
+              <input type="text" class="form-control" name="guion" placeholder="" value='<?php echo $row['guion']?>' required>
             </div>
 
             <div class="col-sm-12">
               <label for="productora" class="form-label">Productora</label>
-              <input type="text" class="form-control" name="productora" placeholder="" value="" required>
+              <input type="text" class="form-control" name="productora" placeholder="" value='<?php echo $row['productora']?>' required>
             </div>
 
             <div class="col-sm-12">
               <label for="sinopsis" class="form-label">Sinopsis</label>
-              <input type="text" class="form-control" name="sinopsis" placeholder="" value="" required>
+              <input type="text" class="form-control" name="sinopsis" placeholder="" value='<?php echo $row['sinopsis']?>' required>
             </div>
 
             <div class="col-sm-12">
               <label for="imagen" class="form-label">Imagen URL</label>
-              <input type="text" class="form-control" name="imagen" placeholder="" value="" required>
+              <input type="text" class="form-control" name="imagen" placeholder="" value='<?php echo $row['imagen']?>' required>
             </div>
+            
+          
         </div>
-        <hr class="my-4">
-        <button class="w-100 btn text-white bg-dark btn-lg" type="submit">Crear Anime</button>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn text-white bg-dark btn-lg" type="submit">Editar anime</button>
         </form>
+
+        <?php
+   
+         }
+          $conn->close();
+        ?> 
+
       </div>
     </div>
   </main>
