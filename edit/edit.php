@@ -28,7 +28,7 @@ $result = $conn->query($sql);
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Administrador</h4>
           <ul class="list-unstyled">
-            <li><a href="create.php" class="text-white">Crear</a></li>
+            <li><a href="./create/create.php" class="text-white">Crear</a></li>
             <li><a href="edit.php" class="text-white">Editar</a></li>
             <li><a href="delete-anime.php" class="text-white">Eliminar</a></li>
           </ul>
