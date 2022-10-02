@@ -55,12 +55,12 @@ https://github.com/gilsusana/animeworld.git
 ## Soporte
 
 Si tiene cualquier problema póngase en contacto con: 
-> emailEjemplo@gmail.com
+> susanagildeveloper@gmail.com
 ***
 
 ## Hoja de ruta
 
-//En la próxima actualización el objetivo es crear un serach(buscador) para facilitar al usuario encontrar el anime que esta buscando
+En la próxima actualización el objetivo es crear un serach(buscador) para facilitar al usuario encontrar el anime que esta buscando
 ***
 
 ## Autora
